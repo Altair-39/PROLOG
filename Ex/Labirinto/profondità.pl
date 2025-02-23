@@ -6,3 +6,4 @@ risolvi(S, [Az | ListaAzioni], Visitati) :-
     trasforma(Az, S, SNuovo),
     \+ member(SNuovo, Visitati),
     risolvi(SNuovo, ListaAzioni, [S | Visitati]).
+
