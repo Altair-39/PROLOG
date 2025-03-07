@@ -54,11 +54,11 @@ fratelloGermano(X,Y) :-
 % relazione di fratelli che non hanno gli stessi genitori 
 
 fratelloUnilaterale(X,Y) :-
-                            genitore(GenitoreComune,X),
-                            genitore(GenitoreComune,Y),
+                            genitore(GenComune,X),
+                            genitore(GenComune,Y),
                             X \== Y, 
-                            genitore(GenitoreX,X),
-                            genitore(GenitoreY,Y),
-                            GenitoreX \== GenitoreComune,
-                            GenitoreY \== GenitoreComune, 
-                            GenitoreX \== GenitoreY.
+                            genitore(GenX,X),
+                            genitore(GenY,Y),
+                            GenX \== GenComune,
+                            GenY \== GenComune, 
+                            GenX \== GenY.

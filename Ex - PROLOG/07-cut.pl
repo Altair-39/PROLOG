@@ -19,3 +19,27 @@ contaPositiviCut([Head | Tail], TotalePos) :-
                       TotalePos is 1 + PosTail.
 contaPositiviCut([_ | Tail], _) :- 
                       contaPositivi(Tail, _).
+
+%contare quanti elementi sono uguali a X
+
+quantiUguali([], _, 0).
+quantiUguali([X | Tail], X, Ris) :- !,
+    quantiUguali(Tail, X, Temp),
+    Ris is 1 + Temp.
+quantiUguali([_ | Tail], X, Temp) :-
+    quantiUguali(Tail, X, Temp).
+
+% cut
+
+provaCut(X, L) :-!,
+    member(X, L),
+    pari(X),
+    nonprimo(X).
+provaCut(12, _).
+
+pari(2).
+pari(4).
+pari(6). 
+nonprimo(4).
+nonprimo(6).
+nonprimo(9).
